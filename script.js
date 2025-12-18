@@ -1,6 +1,5 @@
 let cart = [];
 let total = 0;
-
 function addToCart(item, price) {
     const existing = cart.find(i => i.name === item);
     if (existing) {
