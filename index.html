@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KSH Makeup - Kiss Slay Highlight</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= AUTH MODAL ================= -->
+<div id="auth-modal">
+    <div class="auth-box">
+        <span class="close-btn" onclick="toggleAuth()">×</span>
+
+        <h2 data-i18n="welcome">Welcome to KSH</h2>
+
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+
+        <button class="auth-btn" onclick="handleLogin()" data-i18n="login">
+            Login
+        </button>
+
+        <p class="switch">
+            <span data-i18n="new_here">New here?</span>
+            <span onclick="switchAuth()" data-i18n="create_account">
+                Create an account
+            </span>
+        </p>
+    </div>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <div class="header-center">
+        <div class="logo">KSH</div>
+        <div>
+            <h1>KSH Makeup</h1>
+            <p>Kiss Slay Highlight</p>
+        </div>
+    </div>
+
+    <nav class="nav-links">
+        <a href="#" data-i18n="home">Home</a>
+        <a href="#" data-i18n="shop">Shop</a>
+        
+    </nav>
+
+    <div class="header-icon">
+        <select id="language-select" onchange="changeLanguage()">
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+            <option value="ar">AR</option>
+            <option value="es">ES</option>
+            <option value="ko">KO</option>
+        </select>
+
+        <i id="login-icon" class="fa-regular fa-user" onclick="toggleAuth()"></i>
+      <i id="cart-icon"
+   class="fa-solid fa-cart-shopping"
+   onclick="handleCart(event)">
+</i>
+
+    </div>
+</header>
+
+<!-- ================= CART ================= -->
+<div id="cart">
+    <ul id="cart-items"></ul>
+    <p id="total-label">Total: $0.00</p>
+    <button id="checkout-btn" onclick="checkout()" data-i18n="checkout">
+        Checkout
+    </button>
+</div>
+
+<!-- ================= PRODUCTS ================= -->
+
+    </div> <div class="container"> <div class="product"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80">
+    <h2>Mascara</h2><p>$12.99</p><button onclick="addToCart('Mascara',12.99)">Add to Cart</button></div> 
+    <div class="product"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"><h2>Blush</h2><p>$15.99</p><button onclick="addToCart('Blush',15.99)">Add to Cart</button></div> 
+    <div class="product"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"><h2>Contour</h2><p>$18.99</p><button onclick="addToCart('Contour',18.99)">Add to Cart</button></div> 
+    <div class="product"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"><h2>Highliter</h2><p>$29.99</p><button onclick="addToCart('Highliter',29.99)">Add to Cart</button></div> 
+    <div class="product"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"><h2>Lipliner</h2><p>$19.25</p><button onclick="addToCart('Lipliner',19.25)">Add to Cart</button></div> 
+    <div class="product"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"><h2>Gloss</h2><p>$14.99</p><button onclick="addToCart('Gloss',14.99)">Add to Cart</button></div> 
+    <div class="product"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"><h2>Concealer</h2><p>$28.95</p><button onclick="addToCart('concealer',28.95)">Add to Cart</button></div> 
+    <div class="product"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"><h2>Lipstick</h2><p>$17.50</p><button onclick="addToCart('Lipstick',17.50)">Add to Cart</button></div> </div>
+
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-box">
+            <h3 data-i18n="about">About KSH</h3>
+            <p data-i18n="about_text">
+                Elegant makeup designed to enhance your natural beauty.
+            </p>
+        </div>
+
+        <div class="footer-box">
+            <h3 data-i18n="contact">Contact</h3>
+            <p>Email: info@kshmakeup.com</p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+
+        <div class="footer-box">
+            <h3 data-i18n="follow">Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 KSH Makeup — All Rights Reserved
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
