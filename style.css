@@ -283,7 +283,7 @@ header p {
     position: relative;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: #955251;
@@ -374,4 +374,181 @@ header p {
 .header-icon i:hover {
     color: #000000;
     transform: scale(1.08);
+}
+
+/* ===== TOP PRODUCTS PAGE ===== */
+
+.top-hero {
+    text-align: center;
+    padding: 80px 20px 40px;
+}
+
+.top-hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+.top-hero p {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+/* Products grid */
+.top-products {
+    max-width: 1200px;
+    margin: 40px auto 80px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.top-card {
+    background: #DCAE96;
+    border: 1px solid #955251;
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.4s ease;
+}
+
+.top-card:hover {
+    transform: translateY(-8px);
+}
+
+.top-card img {
+    width: 100%;
+    border-radius: 14px;
+    margin-bottom: 15px;
+}
+
+.top-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.top-card .desc {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.top-card .price {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.top-card button {
+    background: #955251;
+    color: #DCAE96;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.top-card button:hover {
+    background: #000;
+}
+
+/* Badge */
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #955251;
+    color: #DCAE96;
+    font-size: 11px;
+    letter-spacing: 2px;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+.new-arrivals {
+    padding: 50px 20px;
+    background-color: #ebd1b9;
+    text-align: center;
+}
+.new-arrivals h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+.product-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.product-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    width: 220px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+.product-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.1rem;
+}
+.product-card .price {
+    font-weight: bold;
+    margin: 5px 0;
+}
+.product-card button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #955251;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.product-card button:hover {
+    background-color: #b6646c;
+}
+.promotions {
+    padding: 50px 20px;
+    text-align: center;
+}
+.promotions h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+.promo-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.promo-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    width: 220px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: relative;
+}
+.promo-card .old-price {
+    text-decoration: line-through;
+    color: #aaa;
+    margin-right: 5px;
+}
+.best-sellers {
+    padding: 50px 20px;
+    text-align: center;
+}
+.best-sellers h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 30px;
 }

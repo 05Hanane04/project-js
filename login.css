@@ -12,13 +12,14 @@ body{
   background: url(bg.jpg) no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: #DCAE96;
 }
 .wrapper{
   width: 420px;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, .2);
   backdrop-filter: blur(9px);
-  color: #fff;
+  color: #080808;
   border-radius: 12px;
   padding: 30px 40px;
 }
@@ -42,11 +43,11 @@ body{
   border: 2px solid rgba(255, 255, 255, .2);
   border-radius: 40px;
   font-size: 16px;
-  color: #fff;
+  color: #090909;
   padding: 20px 45px 20px 20px;
 }
 .input-box input::placeholder{
-  color: #fff;
+  color: #955251;
 }
 .input-box i{
   position: absolute;
@@ -63,7 +64,7 @@ body{
   margin: -15px 0 15px;
 }
 .remember-forgot label input{
-  accent-color: #fff;
+  accent-color: #955251;
   margin-right: 3px;
 
 }
@@ -78,7 +79,7 @@ body{
 .wrapper .btn{
   width: 100%;
   height: 45px;
-  background: #fff;
+  background: #955251;
   border: none;
   outline: none;
   border-radius: 40px;
@@ -95,7 +96,7 @@ body{
 
 }
 .register-link p a{
-  color: #fff;
+  color: #121111;
   text-decoration: none;
   font-weight: 600;
 }
