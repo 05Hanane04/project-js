@@ -209,3 +209,8 @@ document.addEventListener("DOMContentLoaded", () => {
     updateTexts();
     updateCart();
 });
+
+function toggleMenu() {
+  document.querySelector(".nav-links").classList.toggle("active");
+}
+
