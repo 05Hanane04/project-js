@@ -1,22 +1,14 @@
+/******************** CART ********************/
 let cart = [];
 let total = 0;
-<<<<<<< HEAD
+
 function addToCart(item, price) {
     const existing = cart.find(i => i.name === item);
     if (existing) {
         existing.qty++;
     } else {
-        cart.push({ name: item, price: price, qty: 1 });
+        cart.push({ name: item, price, qty: 1 });
     }
-=======
-
-// ================= CART =================
-function addToCart(item, price) {
-    const existing = cart.find(i => i.name === item);
-    if (existing) existing.qty++;
-    else cart.push({ name: item, price, qty: 1 });
-
->>>>>>> 4b62476e67ec1eee21d98e6a794730225e626542
     total += price;
     updateCart();
 }
@@ -27,25 +19,6 @@ function removeFromCart(index) {
     updateCart();
 }
 
-<<<<<<< HEAD
-function toggleCart() {
-    const cartBox = document.getElementById('cart');
-    cartBox.style.display =
-        cartBox.style.display === 'block' ? 'none' : 'block';
-}
-
-function checkout() {
-    alert('Checkout not implemented in this demo');
-}
-
-// Language dictionary
-const lang = {
-    en: { total: "Total", checkout: "Checkout", remove: "x" },
-    fr: { total: "Total", checkout: "Commander", remove: "x" },
-    ar: { total: "المجموع", checkout: "الدفع", remove: "حذف" },
-    es: { total: "Total", checkout: "Pagar", remove: "x" },
-    ko: { total: "합계", checkout: "결제", remove: "삭제" }
-=======
 function updateCart() {
     const list = document.getElementById("cart-items");
     if (!list) return;
@@ -63,14 +36,35 @@ function updateCart() {
         list.appendChild(li);
     });
 
-    const totalLabel = document.getElementById("total-label");
-    if(totalLabel) totalLabel.textContent = `${lang[currentLang].total}: $${total.toFixed(2)}`;
+    document.getElementById("total-label").textContent =
+        `${lang[currentLang].total}: $${total.toFixed(2)}`;
 
-    const checkoutBtn = document.getElementById("checkout-btn");
-    if(checkoutBtn) checkoutBtn.textContent = lang[currentLang].checkout;
+    document.getElementById("checkout-btn").textContent =
+        lang[currentLang].checkout;
 }
 
-// ================= LANGUAGE SYSTEM =================
+function handleCart(event) {
+    event.stopPropagation();
+    const cartBox = document.getElementById("cart");
+    cartBox.style.display =
+        cartBox.style.display === "block" ? "none" : "block";
+}
+
+document.addEventListener("click", e => {
+    const cartBox = document.getElementById("cart");
+    const cartIcon = document.getElementById("cart-icon");
+
+    if (
+        cartBox &&
+        cartBox.style.display === "block" &&
+        !cartBox.contains(e.target) &&
+        !cartIcon.contains(e.target)
+    ) {
+        cartBox.style.display = "none";
+    }
+});
+
+/******************** LANGUAGES ********************/
 const lang = {
     en: {
         home: "Home",
@@ -157,63 +151,37 @@ const lang = {
         checkout: "결제",
         remove: "삭제"
     }
->>>>>>> 4b62476e67ec1eee21d98e6a794730225e626542
 };
 
 let currentLang = "en";
 
-function changeLanguage() {
-<<<<<<< HEAD
-    const select = document.getElementById("language-select");
-    currentLang = select.value;
-    updateCart();
-}
-
-// ✅ UNE SEULE fonction updateCart
-function updateCart() {
-    const list = document.getElementById('cart-items');
-    list.innerHTML = '';
-
-    cart.forEach((item, i) => {
-        const li = document.createElement('li');
-        li.innerHTML = `${item.name} (x${item.qty}) - $${(item.price * item.qty).toFixed(2)}
-            <button class="remove-btn" onclick="removeFromCart(${i})">
-                ${lang[currentLang].remove}
-            </button>`;
-        list.appendChild(li);
-    });
-
-    document.getElementById('total-label').textContent =
-        `${lang[currentLang].total}: $${total.toFixed(2)}`;
-
-    document.getElementById('checkout-btn').textContent =
-        lang[currentLang].checkout;
-}
-
-=======
-    currentLang = document.getElementById("language-select").value;
-
-    // Traduction des éléments data-i18n
+/******************** APPLY LANGUAGE ********************/
+function updateTexts() {
     document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.dataset.i18n;
-        if (lang[currentLang][key]) el.textContent = lang[currentLang][key];
+        const key = el.getAttribute("data-i18n");
+        if (lang[currentLang][key]) {
+            el.textContent = lang[currentLang][key];
+        }
     });
 
-    // Traduction des boutons produits
-    document.querySelectorAll(".top-card button, .product button").forEach(btn => {
+    // boutons Add to Cart
+    document.querySelectorAll(".product button").forEach(btn => {
         btn.textContent = lang[currentLang].add_to_cart;
     });
+}
 
+function changeLanguage() {
+    const select = document.getElementById("language-select");
+    currentLang = select.value;
+    updateTexts();
     updateCart();
 }
 
-// ================= AUTH =================
->>>>>>> 4b62476e67ec1eee21d98e6a794730225e626542
+/******************** AUTH ********************/
 let isLogin = true;
 
 function toggleAuth() {
     const modal = document.getElementById("auth-modal");
-<<<<<<< HEAD
     modal.style.display =
         modal.style.display === "flex" ? "none" : "flex";
 }
@@ -222,59 +190,22 @@ function switchAuth() {
     isLogin = !isLogin;
 
     document.querySelector(".auth-box h2").textContent =
-        isLogin ? "Login to KSH" : "Create Account";
+        isLogin ? lang[currentLang].login : lang[currentLang].create_account;
 
     document.querySelector(".auth-btn").textContent =
-        isLogin ? "Login" : "Register";
+        isLogin ? lang[currentLang].login : "Register";
 }
 
 function handleLogin() {
     document.getElementById("auth-modal").style.display = "none";
 
     const icon = document.getElementById("login-icon");
-    if (icon) {
-        icon.classList.remove("fa-regular");
-        icon.classList.add("fa-solid");
-    }
+    icon.classList.remove("fa-regular");
+    icon.classList.add("fa-solid");
 }
 
-function handleCart(event) {
-    event.stopPropagation();
-    const cartBox = document.getElementById("cart");
-    cartBox.style.display =
-        cartBox.style.display === "block" ? "none" : "block";
-}
-
-// Close cart when clicking outside
-document.addEventListener("click", function (e) {
-    const cartBox = document.getElementById("cart");
-    const cartIcon = document.getElementById("cart-icon");
-
-    if (cartBox.style.display === "block") {
-        if (!cartBox.contains(e.target) && !cartIcon.contains(e.target)) {
-            cartBox.style.display = "none";
-        }
-=======
-    if(modal) modal.style.display = modal.style.display === "flex" ? "none" : "flex";
-}
-
-// ================= CART UI =================
-function handleCart(event) {
-    event.stopPropagation();
-    const cartBox = document.getElementById("cart");
-    if(cartBox) cartBox.style.display = cartBox.style.display === "block" ? "none" : "block";
-}
-
-document.addEventListener("click", e => {
-    const cartBox = document.getElementById("cart");
-    const cartIcon = document.getElementById("cart-icon");
-
-    if (
-        cartBox && cartBox.style.display === "block" &&
-        !cartBox.contains(e.target) &&
-        !cartIcon.contains(e.target)
-    ) {
-        cartBox.style.display = "none";
->>>>>>> 4b62476e67ec1eee21d98e6a794730225e626542
-    }
+/******************** INIT ********************/
+document.addEventListener("DOMContentLoaded", () => {
+    updateTexts();
+    updateCart();
 });
