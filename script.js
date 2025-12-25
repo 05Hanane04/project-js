@@ -179,7 +179,6 @@ function changeLanguage() {
 
 /******************** AUTH ********************/
 let isLogin = true;
-
 function toggleAuth() {
     const modal = document.getElementById("auth-modal");
     modal.style.display =
@@ -213,4 +212,6 @@ document.addEventListener("DOMContentLoaded", () => {
 function toggleMenu() {
   document.querySelector(".nav-links").classList.toggle("active");
 }
+
+
 

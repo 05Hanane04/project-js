@@ -1,0 +1,54 @@
+/*Contact Page*/
+#form-details{
+    margin: 30px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#form-details form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#form-details form input,
+#form-details form textarea {
+    font-family: monospace;
+  width: 100%;
+  padding: 12px 15px;
+  outline: none;
+  margin-bottom: 20px;
+  border: 1px solid #e2e9e1;
+}
+
+#form-details form button {
+  background-color:#b6646c;
+  color: #fff;
+  margin-left: 730px;
+  width: 14%;
+  text-align: center;
+}
+#form-details form button:hover {
+  background-color: #955251;
+  cursor: pointer;
+}
+       
+/*IPAD*/
+
+@media screen and (max-width:799px){
+    #form-details form button{
+        margin-left: auto;
+        width: 30%;
+    }
+
+}
+
+
+/*Mobile*/
+@media screen and(max-width:477px){
+    #form-details form button{
+        margin-left: auto;
+        width: 30%;
+    }
+
+}

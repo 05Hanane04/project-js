@@ -16,8 +16,6 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="footer.css" />
     <link rel="stylesheet" href="navbar.css" />
-
-    <link rel="icon" type="image/png" href="images/icon.png" />
   </head>
 
   <body>
@@ -92,39 +90,88 @@
         </i>
       </div>
     </header>
-    <section id="img-slider">
-      <div class="slide active">
-        <div class="info">
-          <h4 class="select-none">A touch of beauty</h4>
-          <h2 class="select-none">Makeup that feels like you</h2>
-          <h1 class="select-none">Elegant Everyday</h1>
-          <br />
-          <p class="select-none">
-            Soft textures, thoughtful shades — beauty that feels natural and
-            stays with you.
 
-            <br /><br /><br />
-            <a href="shop.html"></a>
-            <button><a href="shop.html">Shop Now</a></button>
-          </p>
-        </div>
-      </div>
-    </section>
+    <!-- ================= CART ================= -->
+    <div id="cart">
+      <ul id="cart-items"></ul>
+      <p id="total-label">Total: $0.00</p>
+      <button id="checkout-btn" onclick="checkout()" data-i18n="checkout">
+        Checkout
+      </button>
+    </div>
 
-    <!-- NewsLetter -->
-    <section id="newsletter" class="section-p1 section-m1">
-      <div class="newstext">
-        <h4>Sign Up for NewsLetters</h4>
-        <p>
-          Get E-mail updates about our latest shop and
-          <span>special offers</span>
-        </p>
+    <!-- ================= PRODUCTS ================= -->
+    <div class="container">
+      <div class="product">
+        <img
+          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"
+        />
+        <h2>Mascara</h2>
+        <p>$12.99</p>
+        <br /><button onclick="addToCart('Mascara',12.99)">Add to Cart</button>
       </div>
-      <form class="form">
-        <input type="email" placeholder="Your email adress" required />
-        <button class="normal" type="submit">Sign Up</button>
-      </form>
-    </section>
+      <div class="product">
+        <img
+          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"
+        />
+        <h2>Blush</h2>
+        <p>$15.99</p>
+        <br /><button onclick="addToCart('Blush',15.99)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img
+          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"
+        />
+        <h2>Contour</h2>
+        <p>$18.99</p>
+        <br /><button onclick="addToCart('Contour',18.99)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img
+          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"
+        />
+        <h2>Highliter</h2>
+        <p>$29.99</p>
+        <br /><button onclick="addToCart('Highliter',29.99)">
+          Add to Cart
+        </button>
+      </div>
+      <div class="product">
+        <img
+          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"
+        />
+        <h2>Lipliner</h2>
+        <p>$19.25</p>
+        <br /><button onclick="addToCart('Lipliner',19.25)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img
+          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"
+        />
+        <h2>Gloss</h2>
+        <p>$14.99</p>
+        <br /><button onclick="addToCart('Gloss',14.99)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img
+          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"
+        />
+        <h2>Concealer</h2>
+        <p>$28.95</p>
+        <br /><button onclick="addToCart('Concealer',28.95)">
+          Add to Cart
+        </button>
+      </div>
+      <div class="product">
+        <img
+          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"
+        />
+        <h2>Lipstick</h2>
+        <p>$17.50</p>
+        <br /><button onclick="addToCart('Lipstick',17.50)">Add to Cart</button>
+      </div>
+    </div>
+
     <!-- ================= FOOTER ================= -->
     <footer>
       <div class="footer-container">
