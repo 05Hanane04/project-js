@@ -1,0 +1,198 @@
+/* ================= HEADER ================= */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 40px;
+  border-bottom: 1.5px solid #955251;
+  position: sticky;
+  top: 0;
+  background: #dcae96;
+  z-index: 1000;
+}
+
+/* Center logo + title */
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Logo */
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #955251;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: #dcae96;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+
+/* Title */
+header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  letter-spacing: 5px;
+  margin: 0;
+}
+
+header p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+/* ================= NAV ================= */
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #955251;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1.5px;
+  background: #955251;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #000;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ================= ICONS ================= */
+.header-icon {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.header-icon i {
+  font-size: 28px;
+  color: #955251;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.header-icon i:hover {
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* Language select */
+#language-select {
+  background: transparent;
+  border: 1px solid #955251;
+  border-radius: 8px;
+  padding: 6px 26px 6px 12px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #955251;
+  cursor: pointer;
+}
+
+#language-select:hover {
+  background: #955251;
+  color: #dcae96;
+}
+
+/* ================= BURGER ================= */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 26px;
+  height: 2px;
+  background: #955251;
+  transition: 0.3s;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .header-center {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 24px;
+    letter-spacing: 3px;
+  }
+
+  header p {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .burger {
+    display: flex;
+    margin-top: 15px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .header-icon {
+    margin-top: 20px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+}

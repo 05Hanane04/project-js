@@ -1,144 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KSH Makeup - Top Products</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KSH Makeup - Top Products</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="footer.css">
-<link rel="stylesheet" href="navbar.css">
-<link rel="stylesheet" href="contact.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/footer.css" />
+    <link rel="stylesheet" href="./CSS/navbar.css" />
+    <link rel="stylesheet" href="./CSS/contact.css" />
+    <link rel="stylesheet" href="./CSS/responsive.css" />
 
-<body>
+    <link rel="icon" type="image/png" href="images/icon.png" />
+  </head>
 
-<!-- ================= AUTH MODAL ================= -->
-<div id="auth-modal">
-    <div class="auth-box">
-        <span class="close-btn" onclick="toggleAuth()">×</span>
+  <body>
+   <div id="auth-modal">
+      <div class="auth-box">
+        <span class="close-btn" onclick="toggleAuth()">x</span>
 
         <h2 data-i18n="welcome">Welcome to KSH</h2>
 
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Password">
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
 
         <button class="auth-btn" onclick="handleLogin()" data-i18n="login">
-            Login
+          Login
         </button>
 
         <p class="switch">
-            <span data-i18n="new_here">New here?</span>
-            <span onclick="switchAuth()" data-i18n="create_account">
-                Create an account
-            </span>
+          <span data-i18n="new_here">New here?</span>
+          <span onclick="switchAuth()" data-i18n="create_account">
+            Create an account
+          </span>
         </p>
+      </div>
     </div>
-</div>
-<!-- ================= HEADER ================= -->
-<header>
-    <div class="header-center">
-       <div class="logo"><a class="logo-link" href="index.html">KSH</a></div>
+
+
+    <!-- ================= HEADER ================= -->
+    <header>
+      <div class="header-center">
+        <div class="logo"><a class="logo-link" href="index.html">KSH</a></div>
         <div>
-            <h1>KSH Makeup</h1>
-            <p>Kiss Slay Highlight</p>
+          <h1>KSH Makeup</h1>
+          <p>Kiss Slay Highlight</p>
         </div>
-    </div>
+      </div>
 
-    <nav class="nav-links">
-    <a href="index.html" data-i18n="home">Home</a>
-    <a href="top-products.html" class="active" data-i18n="top_products">Top Products</a>
-    <a href="shop.html" data-i18n="shop">Shop</a>
-    <a href="contact.html" data-i18n="contact">Contact</a>
+      <nav class="nav-links">
+        <a href="index.html" data-i18n="home">Home</a>
+        <a href="top-products.html" class="active" data-i18n="top_products"
+          >Top Products</a
+        >
+        <a href="shop.html" data-i18n="shop">Shop</a>
+        <a href="contact.html" data-i18n="contact">Contact</a>
+      </nav>
+      <div class="burger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-</nav>
-<div class="burger" onclick="toggleMenu()">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-
-    <div class="header-icon">
+      <div class="header-icon">
         <select id="language-select" onchange="changeLanguage()">
-            <option value="en">EN</option>
-            <option value="fr">FR</option>
-            <option value="ar">AR</option>
-            <option value="es">ES</option>
-            <option value="ko">KO</option>
+          <option value="en">EN</option>
+          <option value="fr">FR</option>
+          <option value="ar">AR</option>
+          <option value="es">ES</option>
+          <option value="ko">KO</option>
         </select>
 
-        <i id="login-icon" class="fa-regular fa-user" onclick="toggleAuth()"></i>
-      <i id="cart-icon"
-   class="fa-solid fa-cart-shopping"
-   onclick="handleCart(event)">
-</i>
-
-    </div>
-</header>
-<!-- ================= CART ================= -->
-<div id="cart">
-    <ul id="cart-items"></ul>
-    <p id="total-label">Total: $0.00</p>
-    <button id="checkout-btn" onclick="checkout()" data-i18n="checkout">
+        <i
+          id="login-icon"
+          class="fa-regular fa-user"
+          onclick="toggleAuth()"
+        ></i>
+        <i
+          id="cart-icon"
+          class="fa-solid fa-cart-shopping"
+          onclick="handleCart(event)"
+        >
+        </i>
+      </div>
+    </header>
+    <!-- ================= CART ================= -->
+    <div id="cart">
+      <ul id="cart-items"></ul>
+      <p id="total-label">Total: $0.00</p>
+      <button id="checkout-btn" onclick="checkout()" data-i18n="checkout">
         Checkout
-    </button>
-</div>
-<!-- Hero Section -->
-  
-
+      </button>
+    </div>
+    <!-- Hero Section -->
 
     <section id="form-details">
-            <form action="" id="myform">
-                <br>
-                <span>LEAVE A MESSAGE</span>
-                <br>
-                <h2> We would like to hear from you !</h2>
-                <br>
-                <input type="text" placeholder="Your Name" required>
-                <input type="text" placeholder="Your E-mail" required>
-                <input type="text" placeholder="Your Subject" required>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
-                <button class="normal">Submit</button>
-            </form>
-
-          
+      <form action="" id="myform">
+        <br />
+        <h2>We would love to hear from you !</h2>
+        <br />
+        <p>
+          Have a question, feedback, or just want to say hi? Drop us a message
+          below
+        </p>
+        <br />
+        <input type="text" placeholder="Your Name" required />
+        <input type="text" placeholder="Your E-mail" required />
+        <input type="text" placeholder="Your Subject" required />
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Your Message"
+          required
+        ></textarea>
+        <button class="normal">Submit</button>
+      </form>
     </section>
 
-<!-- ================= FOOTER ================= -->
-<footer>
-    <div class="footer-container">
+    <!-- ================= FOOTER ================= -->
+    <footer>
+      <div class="footer-container">
         <div class="footer-box">
-            <h3 data-i18n="about">About KSH</h3>
-            <p data-i18n="about_text">
-                Elegant makeup designed to enhance your natural beauty.
-            </p>
+          <h3 data-i18n="about">About KSH</h3>
+          <p data-i18n="about_text">
+            Elegant makeup designed to enhance your natural beauty.
+          </p>
         </div>
 
         <div class="footer-box">
-            <h3 data-i18n="contact">Contact</h3>
-            <p>Email: info@kshmakeup.com</p>
-            <p>Phone: (123) 456-7890</p>
+          <h3 data-i18n="contact">Contact</h3>
+          <p>Email: kshmakeup@gmail.com</p>
+          <p>Phone: (123) 456-7890</p>
         </div>
 
         <div class="footer-box">
-            <h3 data-i18n="follow">Follow Us</h3>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
-            </div>
+          <h3 data-i18n="follow">Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <div class="footer-bottom">
-        © 2025 KSH Makeup — All Rights Reserved
-    </div>
-</footer>
+      <div class="footer-bottom">© 2025 KSH Makeup — All Rights Reserved</div>
+    </footer>
 
-<script src="script.js"></script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

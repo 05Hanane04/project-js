@@ -1,0 +1,118 @@
+@media (max-width: 768px) {
+  #newsletter {
+    padding: 40px;
+  }
+  #newsletter .form {
+    width: 70%;
+  }
+  .why-ksh h2 {
+    font-size: 30px;
+  }
+  /* SLIDER */
+  #img-slider {
+    height: 70vh;
+    margin-top: -30px;
+    padding: 0 15px;
+  }
+
+  #img-slider .slide .info h1 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  #img-slider .slide .info h2 {
+    font-size: 26px;
+    line-height: 2rem;
+  }
+
+  #img-slider .slide .info h4 {
+    font-size: 1.1rem;
+  }
+
+  /* PRODUCTS */
+  .container,
+  .top-products {
+    padding: 10px;
+    gap: 20px;
+  }
+
+  /* CART */
+  #cart {
+    right: 10px;
+    width: 90%;
+    max-width: 300px;
+  }
+
+  /* AUTH MODAL */
+  .auth-box {
+    width: 90%;
+    padding: 25px 20px;
+  }
+
+  /* NEWSLETTER */
+  #newsletter {
+    flex-direction: column;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  #newsletter h4,
+  #newsletter p {
+    margin-left: 0;
+  }
+
+  #newsletter .form {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  /* WHY KSH */
+  .why-ksh {
+    padding: 60px 15px;
+  }
+
+  .why-ksh h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 1024px) {
+
+  #newsletter {
+    padding: 40px 40px;
+  }
+
+  #newsletter .form {
+    width: 60%;
+  }
+
+  .top-hero h2 {
+    font-size: 34px;
+  }
+}
+/*Contact Page*/
+@media screen and (max-width: 799px) {
+  #form-details form button {
+    margin-left: auto;
+    width: 30%;
+  }
+  #form-details {
+    margin: 20px;
+  }
+
+  #form-details form {
+    width: 100%;
+  }
+
+  #form-details form button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and(max-width:477px) {
+  #form-details form button {
+    margin-left: auto;
+    width: 30%;
+  }
+}

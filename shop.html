@@ -13,16 +13,19 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="footer.css" />
-    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/footer.css" />
+    <link rel="stylesheet" href="./CSS/navbar.css" />
+    <link rel="stylesheet" href="./CSS/responsive.css" />
+
+    <link rel="icon" type="image/png" href="images/icon.png" />
   </head>
 
   <body>
     <!-- ================= AUTH MODAL ================= -->
-    <div id="auth-modal">
+<div id="auth-modal">
       <div class="auth-box">
-        <span class="close-btn" onclick="toggleAuth()">×</span>
+        <span class="close-btn" onclick="toggleAuth()">x</span>
 
         <h2 data-i18n="welcome">Welcome to KSH</h2>
 
@@ -41,6 +44,8 @@
         </p>
       </div>
     </div>
+
+
 
     <!-- ================= HEADER ================= -->
     <header>
@@ -95,10 +100,16 @@
     <div id="cart">
       <ul id="cart-items"></ul>
       <p id="total-label">Total: $0.00</p>
+      <br />
       <button id="checkout-btn" onclick="checkout()" data-i18n="checkout">
         Checkout
       </button>
     </div>
+<!-- ================= TOP HERO ================= -->
+<section class="top-hero reveal">
+  <h2 data-i18n="shop_title">Shop Now</h2>
+  <p data-i18n="shop_text">Check out our amazing products</p>
+</section>
 
     <!-- ================= PRODUCTS ================= -->
     <div class="container">
@@ -184,7 +195,7 @@
 
         <div class="footer-box">
           <h3 data-i18n="contact">Contact</h3>
-          <p>Email: info@kshmakeup.com</p>
+          <p>Email: kshmakeup@gmail.com</p>
           <p>Phone: (123) 456-7890</p>
         </div>
 

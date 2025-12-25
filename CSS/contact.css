@@ -1,0 +1,40 @@
+/* Contact Page */
+#form-details {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+}
+#form-details form {
+  width: 70%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+}
+#form-details form input,
+#form-details form textarea {
+  font-family: monospace;
+  width: 100%;
+  padding: 12px 15px;
+  outline: none;
+  margin-bottom: 20px;
+  border: 1px solid #e2e9e1;
+  border-radius: 6px;
+}
+
+/* Button */
+#form-details form button {
+  background-color: #b6646c;
+  color: #fff;
+  width: fit-content;
+  padding: 12px 30px;
+  align-self: center;
+  border: none;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+#form-details form button:hover {
+  background-color: #955251;
+  cursor: pointer;
+}

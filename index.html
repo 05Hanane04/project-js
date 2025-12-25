@@ -13,9 +13,10 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="footer.css" />
-    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/navbar.css" />
+    <link rel="stylesheet" href="./CSS/footer.css" />
+    <link rel="stylesheet" href="./CSS/responsive.css" />
 
     <link rel="icon" type="image/png" href="images/icon.png" />
   </head>
@@ -24,7 +25,7 @@
     <!-- ================= AUTH MODAL ================= -->
     <div id="auth-modal">
       <div class="auth-box">
-        <span class="close-btn" onclick="toggleAuth()">×</span>
+        <span class="close-btn" onclick="toggleAuth()">x</span>
 
         <h2 data-i18n="welcome">Welcome to KSH</h2>
 
@@ -88,24 +89,81 @@
           id="cart-icon"
           class="fa-solid fa-cart-shopping"
           onclick="handleCart(event)"
-        >
-        </i>
+        ></i>
       </div>
     </header>
+
+    <!-- Slider -->
     <section id="img-slider">
       <div class="slide active">
         <div class="info">
-          <h4 class="select-none">A touch of beauty</h4>
-          <h2 class="select-none">Makeup that feels like you</h2>
-          <h1 class="select-none">Elegant Everyday</h1>
+          <h4 class="select-none" data-i18n="hero_subtitle">
+            A touch of beauty
+          </h4>
+          <h2 class="select-none" data-i18n="hero_title">
+            Where beauty meets confidence
+          </h2>
+          <h1 class="select-none" data-i18n="hero_main">Elegant Everyday</h1>
           <br />
-          <p class="select-none">
-            Soft textures, thoughtful shades — beauty that feels natural and
-            stays with you.
+          <p class="select-none" data-i18n="hero_desc">
+            Soft textures, thoughtful shades, beauty that feels natural and
+            stays with you
+          </p>
+          <br /><br /><br />
+          <button
+            data-i18n="shop_now"
+            onclick="window.location.href='shop.html'"
+          ></button>
+        </div>
+      </div>
+    </section>
+    <div class="stock-ticker">
+      <ul>
+        <li><span class="company">Beauty</span></li>
+        <li><span class="company">Highlighter</span></li>
+        <li><span class="company">Blush</span></li>
+        <li><span class="company">Radiance</span></li>
+        <li><span class="company">Mascara</span></li>
+        <li><span class="company">Glow</span></li>
+        <li><span class="company">Elegance</span></li>
+        <li><span class="company">Shine</span></li>
+      </ul>
 
-            <br /><br /><br />
-            <a href="shop.html"></a>
-            <button><a href="shop.html">Shop Now</a></button>
+      <ul aria-hidden="true">
+        <li><span class="company">Beauty</span></li>
+        <li><span class="company">Highlighter</span></li>
+        <li><span class="company">Blush</span></li>
+        <li><span class="company">Radiance</span></li>
+        <li><span class="company">Mascara</span></li>
+        <li><span class="company">Glow</span></li>
+        <li><span class="company">Elegance</span></li>
+        <li><span class="company">Shine</span></li>
+      </ul>
+    </div>
+
+    <!-- Why KSH -->
+    <section class="why-ksh reveal">
+      <h2 data-i18n="why_ksh_title">Why KSH ?</h2>
+      <div class="why-grid">
+        <div class="why-card reveal reveal-left">
+          <i class="fa-solid fa-gem"></i>
+          <h3 data-i18n="premium_quality">Premium Quality</h3>
+          <p data-i18n="premium_quality_desc">
+            High-end formulas designed for elegance and performance.
+          </p>
+        </div>
+        <div class="why-card reveal">
+          <i class="fa-solid fa-heart"></i>
+          <h3 data-i18n="cruelty_free">Cruelty Free</h3>
+          <p data-i18n="cruelty_free_desc">
+            Beauty with respect. Never tested on animals.
+          </p>
+        </div>
+        <div class="why-card reveal reveal-right">
+          <i class="fa-solid fa-crown"></i>
+          <h3 data-i18n="luxury_experience">Luxury Experience</h3>
+          <p data-i18n="luxury_experience_desc">
+            Inspired by haute couture and timeless beauty.
           </p>
         </div>
       </div>
@@ -114,17 +172,20 @@
     <!-- NewsLetter -->
     <section id="newsletter" class="section-p1 section-m1">
       <div class="newstext">
-        <h4>Sign Up for NewsLetters</h4>
-        <p>
+        <h4 data-i18n="newsletter_title">Sign Up for NewsLetters</h4>
+        <p data-i18n="newsletter_desc">
           Get E-mail updates about our latest shop and
-          <span>special offers</span>
+          <span data-i18n="newsletter_span">special offers</span>
         </p>
       </div>
       <form class="form">
-        <input type="email" placeholder="Your email adress" required />
-        <button class="normal" type="submit">Sign Up</button>
+        <input type="email" placeholder="Your email address" required />
+        <button class="normal" type="submit" data-i18n="newsletter_btn">
+          Sign Up
+        </button>
       </form>
     </section>
+
     <!-- ================= FOOTER ================= -->
     <footer>
       <div class="footer-container">
@@ -137,7 +198,7 @@
 
         <div class="footer-box">
           <h3 data-i18n="contact">Contact</h3>
-          <p>Email: info@kshmakeup.com</p>
+          <p>Email: kshmakeup@gmail.com</p>
           <p>Phone: (123) 456-7890</p>
         </div>
 
