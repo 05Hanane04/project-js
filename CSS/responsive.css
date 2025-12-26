@@ -30,11 +30,6 @@
   }
 
   /* PRODUCTS */
-  .container,
-  .top-products {
-    padding: 10px;
-    gap: 20px;
-  }
 
   /* CART */
   #cart {

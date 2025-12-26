@@ -23,7 +23,7 @@
 
   <body>
     <!-- ================= AUTH MODAL ================= -->
-<div id="auth-modal">
+    <div id="auth-modal">
       <div class="auth-box">
         <span class="close-btn" onclick="toggleAuth()">x</span>
 
@@ -44,8 +44,6 @@
         </p>
       </div>
     </div>
-
-
 
     <!-- ================= HEADER ================= -->
     <header>
@@ -105,84 +103,180 @@
         Checkout
       </button>
     </div>
-<!-- ================= TOP HERO ================= -->
-<section class="top-hero reveal">
-  <h2 data-i18n="shop_title">Shop Now</h2>
-  <p data-i18n="shop_text">Check out our amazing products</p>
-</section>
-
+    <!-- ================= TOP HERO ================= -->
+    <section class="top-hero reveal">
+      <h2 data-i18n="shop_title">Shop Now</h2>
+      <p data-i18n="shop_text">Check out our amazing products</p>
+    </section>
     <!-- ================= PRODUCTS ================= -->
-    <div class="container">
-      <div class="product">
-        <img
-          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"
-        />
-        <h2>Mascara</h2>
-        <p>$12.99</p>
-        <br /><button onclick="addToCart('Mascara',12.99)">Add to Cart</button>
+    <section id="product1" class="section-p1">
+      <div class="pro-container">
+        <div class="pro">
+          <img
+            src="images/shop-mascara.webp"
+          />
+          <div class="des">
+            <span>KSH</span>
+            <h5>Mascara</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4>$34.99</h4>
+          </div>
+          <a href="#" class="cart" onclick="addToCart('Mascara',34.99)">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </a>
+        </div>
+        <div class="pro">
+          <img
+            src="images/shop-blush.jpg"
+          />
+          <div class="des">
+            <span>KSH</span>
+            <h5>Blush</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4>$40.99</h4>
+          </div>
+          <a href="#" class="cart" onclick="addToCart('Blush',40.99)">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </a>
+        </div>
+        <div class="pro">
+          <img
+            src="images/shop-contour.jpg"
+          />
+          <div class="des">
+            <span>KSH</span>
+            <h5>Contour</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4>$28.99</h4>
+          </div>
+          <a href="#" class="cart" onclick="addToCart('Contour',28.99)">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </a>
+        </div>
+        <div class="pro">
+          <img
+            src="images/shop-highlighter.jpg"
+          />
+          <div class="des">
+            <span>KSH</span>
+            <h5>Highliter</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4>$29.99</h4>
+          </div>
+          <a href="#" class="cart" onclick="addToCart('Highliter',29.99)">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </a>
+        </div>
       </div>
-      <div class="product">
-        <img
-          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"
-        />
-        <h2>Blush</h2>
-        <p>$15.99</p>
-        <br /><button onclick="addToCart('Blush',15.99)">Add to Cart</button>
+    </section>
+    <section id="product1" class="section-p1">
+      <div class="pro-container">
+        <div class="pro">
+          <img
+            src="images/shop-lipliner.webp"
+          />
+          <div class="des">
+            <span>KSH</span>
+            <h5>Lipliner</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4>$19.25</h4>
+          </div>
+          <a href="#" class="cart" onclick="addToCart('Lipliner',19.25)">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </a>
+        </div>
+        <div class="pro">
+          <img
+            src="images/shop-gloss.webp"
+          />
+          <div class="des">
+            <span>KSH</span>
+            <h5>Gloss</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4>$24.99</h4>
+          </div>
+          <a href="#" class="cart" onclick="addToCart('Gloss',24.99)">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </a>
+        </div>
+        <div class="pro">
+          <img
+            src="images/shop-concealer.jpg"
+          />
+          <div class="des">
+            <span>KSH</span>
+            <h5>Concealer</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4>$35.95</h4>
+          </div>
+          <a href="#" class="cart" onclick="addToCart('Concealer',35.95)">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </a>
+        </div>
+        <div class="pro">
+          <img
+            src="images/shop-lipstick.webp"
+          />
+          <div class="des">
+            <span>KSH</span>
+            <h5>Lipstick</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4>$22.50</h4>
+          </div>
+          <a href="#" class="cart" onclick="addToCart('Lipstick',22.50)">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </a>
+        </div>
       </div>
-      <div class="product">
-        <img
-          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"
-        />
-        <h2>Contour</h2>
-        <p>$18.99</p>
-        <br /><button onclick="addToCart('Contour',18.99)">Add to Cart</button>
-      </div>
-      <div class="product">
-        <img
-          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"
-        />
-        <h2>Highliter</h2>
-        <p>$29.99</p>
-        <br /><button onclick="addToCart('Highliter',29.99)">
-          Add to Cart
-        </button>
-      </div>
-      <div class="product">
-        <img
-          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"
-        />
-        <h2>Lipliner</h2>
-        <p>$19.25</p>
-        <br /><button onclick="addToCart('Lipliner',19.25)">Add to Cart</button>
-      </div>
-      <div class="product">
-        <img
-          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"
-        />
-        <h2>Gloss</h2>
-        <p>$14.99</p>
-        <br /><button onclick="addToCart('Gloss',14.99)">Add to Cart</button>
-      </div>
-      <div class="product">
-        <img
-          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"
-        />
-        <h2>Concealer</h2>
-        <p>$28.95</p>
-        <br /><button onclick="addToCart('Concealer',28.95)">
-          Add to Cart
-        </button>
-      </div>
-      <div class="product">
-        <img
-          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80"
-        />
-        <h2>Lipstick</h2>
-        <p>$17.50</p>
-        <br /><button onclick="addToCart('Lipstick',17.50)">Add to Cart</button>
-      </div>
-    </div>
-
+    </section>
     <!-- ================= FOOTER ================= -->
     <footer>
       <div class="footer-container">
