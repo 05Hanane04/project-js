@@ -74,9 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCart();
   document.getElementById("cart").classList.add("hidden");
 });
-
 let currentLang = "en";
-
 const lang = {
   en: {
     home: "Home",
@@ -384,3 +382,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function toggleMenu() {
   document.querySelector(".nav-links").classList.toggle("active");
 }
+window.addEventListener("scroll", () => {
+  document.querySelector("header")
+    .classList.toggle("scrolled", window.scrollY > 50);
+});

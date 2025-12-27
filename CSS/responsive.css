@@ -103,6 +103,13 @@
     width: 100%;
     text-align: center;
   }
+  
+    #product1 .pro-container{
+        justify-content: center;
+    }
+    #product1 .pro-container .pro{
+        margin: 15px;
+    }
 }
 
 @media screen and(max-width:477px) {
@@ -110,4 +117,10 @@
     margin-left: auto;
     width: 30%;
   }
+  .section-p1{
+        padding: 20px;
+    }
+    #product1 .pro-container .pro{
+        width: 100%;
+    }
 }
