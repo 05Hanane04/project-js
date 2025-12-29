@@ -16,14 +16,14 @@
     <link rel="stylesheet" href="./CSS/style.css" />
     <link rel="stylesheet" href="./CSS/footer.css" />
     <link rel="stylesheet" href="./CSS/navbar.css" />
-    <link rel="stylesheet" href="./CSS/responsive.css" />
+    <link rel="stylesheet" href=./CSS/responsive.css" />
 
-    <link rel="icon" type="image/png" href="images/icon.png" />
+    <link rel="icon" type="image/png" href="./images/icon.png" />
   </head>
 
   <body>
     <!-- ================= AUTH MODAL ================= -->
-<div id="auth-modal">
+    <div id="auth-modal">
       <div class="auth-box">
         <span class="close-btn" onclick="toggleAuth()">x</span>
 
@@ -44,7 +44,6 @@
         </p>
       </div>
     </div>
-
 
     <!-- ================= HEADER ================= -->
     <header>
@@ -85,6 +84,13 @@
           onclick="toggleAuth()"
         ></i>
         <i
+          id="favorites-icon"
+          class="fa-regular fa-heart"
+          onclick="toggleFavorites()"
+          title="Favorites"
+        ></i>
+
+        <i
           id="cart-icon"
           class="fa-solid fa-cart-shopping"
           onclick="handleCart(event)"
@@ -96,12 +102,29 @@
     <div id="cart">
       <ul id="cart-items"></ul>
       <p id="total-label">Total: $0.00</p>
-      <br />
 
       <button id="checkout-btn" onclick="checkout()" data-i18n="checkout">
         Checkout
       </button>
     </div>
+    <section class="promo-scroll">
+      <div class="promo-track">
+        <span data-lang="launch_offer">KSH Makeup Launch Offer</span>
+        <span data-lang="launch_discount">-20% on selected products</span>
+        <span data-lang="new_collection">New collection now available</span>
+        <span data-lang="limited_stock">Limited quantities</span>
+        <span data-lang="discover_now">Discover the collection</span>
+        <span data-lang="stay_tuned">Stay tuned!</span>
+
+        <span data-lang="launch_offer">KSH Makeup Launch Offer</span>
+        <span data-lang="launch_discount">-20% on selected products</span>
+        <span data-lang="new_collection">New collection now available</span>
+        <span data-lang="limited_stock">Limited quantities</span>
+        <span data-lang="discover_now">Discover the collection</span>
+        <span data-lang="stay_tuned">Stay tuned!</span>
+      </div>
+    </section>
+
     <!-- ================= HERO ================= -->
     <section class="top-hero reveal">
       <h2 data-i18n="top_products">Top Products</h2>
@@ -112,9 +135,7 @@
     <section class="top-products">
       <div class="top-card">
         <span class="badge">BEST</span>
-        <img
-          src="./images/maskara.jpeg"
-        />
+        <img src="./images/maskara.jpeg" />
         <h3>Luxury Mascara</h3>
         <p class="desc">Intense volume & long-lasting effect.</p>
         <p class="price">$12.99</p>
@@ -128,9 +149,7 @@
 
       <div class="top-card">
         <span class="badge">HOT</span>
-        <img
-          src="./images/blush.webp"
-        />
+        <img src="./images/blush.webp" />
         <h3>Rose Blush</h3>
         <p class="desc">Natural glow for all skin tones.</p>
         <p class="price">$15.99</p>
@@ -141,9 +160,7 @@
 
       <div class="top-card">
         <span class="badge">TOP</span>
-        <img
-          src="./images/hightlighter.webp"
-        />
+        <img src="./images/hightlighter.webp" />
         <h3>Golden Highlighter</h3>
         <p class="desc">Radiant shine & silky texture.</p>
         <p class="price">$29.99</p>

@@ -48,7 +48,6 @@ header p {
   opacity: 0.9;
 }
 
-/* ================= NAV ================= */
 .nav-links {
   display: flex;
   gap: 30px;
@@ -90,7 +89,7 @@ header p {
 }
 
 .header-icon i {
-  font-size: 28px;
+  font-size: 26px;
   color: #955251;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -146,13 +145,6 @@ header.scrolled {
   .header-center {
     flex: 1;
   }
-
-  /* .header-icon {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    order: 2;
-  } */
    .header-icon {
     max-width: 100%;
     overflow-x: auto;
@@ -190,6 +182,7 @@ header.scrolled {
     text-align: center;
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
     z-index: 999;
+    border: 1px solid #955251;
   }
 
   .nav-links.active {
@@ -207,7 +200,7 @@ header.scrolled {
   }
 
   .header-icon i {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   #language-select {

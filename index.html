@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KSH Makeup - Kiss Slay Highlight</title>
+    <title>KSH Makeup - Home</title>
 
     <link
       rel="stylesheet"
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="./CSS/footer.css" />
     <link rel="stylesheet" href="./CSS/responsive.css" />
 
-    <link rel="icon" type="image/png" href="images/icon.png" />
+    <link rel="icon" type="image/png" href="./images/icon.png" />
   </head>
 
   <body>
@@ -38,9 +38,7 @@
 
         <p class="switch">
           <span data-i18n="new_here">New here?</span>
-          <span onclick="switchAuth()" data-i18n="create_account">
-            Create an account
-          </span>
+          <span onclick="switchAuth()" data-i18n="create_account"> </span>
         </p>
       </div>
     </div>
@@ -86,6 +84,13 @@
           onclick="toggleAuth()"
         ></i>
         <i
+          id="favorites-icon"
+          class="fa-regular fa-heart"
+          onclick="toggleFavorites()"
+          title="Favorites"
+        ></i>
+
+        <i
           id="cart-icon"
           class="fa-solid fa-cart-shopping"
           onclick="handleCart(event)"
@@ -113,7 +118,9 @@
           <button
             data-i18n="shop_now"
             onclick="window.location.href='shop.html'"
-          ></button>
+          >
+            Shop Now
+          </button>
         </div>
       </div>
     </section>
@@ -174,8 +181,7 @@
       <div class="newstext">
         <h4 data-i18n="newsletter_title">Sign Up for NewsLetters</h4>
         <p data-i18n="newsletter_desc">
-          Get E-mail updates about our latest shop and
-          <span data-i18n="newsletter_span">special offers</span>
+          Get E-mail updates about our latest shop and special offers
         </p>
       </div>
       <form class="form">

@@ -5,6 +5,22 @@
   #newsletter .form {
     width: 70%;
   }
+   /* NEWSLETTER */
+  #newsletter {
+    flex-direction: column;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  #newsletter h4,
+  #newsletter p {
+    margin-left: 0;
+  }
+
+  #newsletter .form {
+    width: 100%;
+    margin-top: 20px;
+  }
   .why-ksh h2 {
     font-size: 30px;
   }
@@ -44,22 +60,7 @@
     padding: 25px 20px;
   }
 
-  /* NEWSLETTER */
-  #newsletter {
-    flex-direction: column;
-    padding: 30px 20px;
-    text-align: center;
-  }
-
-  #newsletter h4,
-  #newsletter p {
-    margin-left: 0;
-  }
-
-  #newsletter .form {
-    width: 100%;
-    margin-top: 20px;
-  }
+ 
 
   /* WHY KSH */
   .why-ksh {
@@ -72,13 +73,8 @@
   }
 }
 @media (max-width: 1024px) {
-
-  #newsletter {
-    padding: 40px 40px;
-  }
-
   #newsletter .form {
-    width: 60%;
+    width: 100%;
   }
 
   .top-hero h2 {
@@ -123,4 +119,7 @@
     #product1 .pro-container .pro{
         width: 100%;
     }
+    #newsletter .form {
+    width: 100%;
+  }
 }

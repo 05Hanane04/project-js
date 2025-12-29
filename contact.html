@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KSH Makeup - Top Products</title>
+    <title>KSH Makeup - Contact</title>
 
     <link
       rel="stylesheet"
@@ -19,11 +19,11 @@
     <link rel="stylesheet" href="./CSS/contact.css" />
     <link rel="stylesheet" href="./CSS/responsive.css" />
 
-    <link rel="icon" type="image/png" href="images/icon.png" />
+    <link rel="icon" type="image/png" href="./images/icon.png" />
   </head>
 
   <body>
-   <div id="auth-modal">
+    <div id="auth-modal">
       <div class="auth-box">
         <span class="close-btn" onclick="toggleAuth()">x</span>
 
@@ -44,7 +44,6 @@
         </p>
       </div>
     </div>
-
 
     <!-- ================= HEADER ================= -->
     <header>
@@ -85,6 +84,13 @@
           onclick="toggleAuth()"
         ></i>
         <i
+          id="favorites-icon"
+          class="fa-regular fa-heart"
+          onclick="toggleFavorites()"
+          title="Favorites"
+        ></i>
+
+        <i
           id="cart-icon"
           class="fa-solid fa-cart-shopping"
           onclick="handleCart(event)"
@@ -92,15 +98,7 @@
         </i>
       </div>
     </header>
-    <!-- ================= CART ================= -->
-    <div id="cart">
-      <ul id="cart-items"></ul>
-      <p id="total-label">Total: $0.00</p>
-      <button id="checkout-btn" onclick="checkout()" data-i18n="checkout">
-        Checkout
-      </button>
-    </div>
-    <!-- Hero Section -->
+  
 
     <section id="form-details">
       <form action="" id="myform">

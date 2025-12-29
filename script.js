@@ -98,7 +98,7 @@ const lang = {
     luxury_experience: "Luxury Experience",
     luxury_experience_desc: "Inspired by haute couture and timeless beauty.",
     newsletter_title: "Sign Up for NewsLetters",
-    newsletter_desc: "Get E-mail updates about our latest shop and",
+    newsletter_desc: "Get E-mail updates about our latest shop and special offers",
     newsletter_span: "special offers",
     newsletter_btn: "Sign Up",
     total: "Total",
@@ -112,6 +112,13 @@ const lang = {
     shop_title: "Shop Now",
     shop_text: "Check out our amazing products",
     add_to_cart: "Add to Cart",
+    launch_offer: "KSH Makeup Launch Offer",
+launch_discount: "-20% on selected products",
+new_collection: "New collection now available",
+limited_stock: "Limited quantities",
+discover_now: "Discover the collection",
+stay_tuned: "Stay tuned!",
+
   },
   fr: {
     home: "Accueil",
@@ -150,6 +157,13 @@ const lang = {
     shop_title: "Boutique",
     shop_text: "Découvrez nos produits incroyables",
     add_to_cart: "Ajouter au panier",
+    launch_offer: "Offre de lancement KSH Makeup",
+launch_discount: "-20% sur les produits sélectionnés",
+new_collection: "Nouvelle collection disponible",
+limited_stock: "Quantités limitées",
+discover_now: "Découvrir la collection",
+stay_tuned: "Restez connectés !",
+
   },
   ar: {
     home: "الرئيسية",
@@ -185,6 +199,13 @@ const lang = {
     shop_title: "المتجر",
     shop_text: "اطلع على منتجاتنا المذهلة",
     add_to_cart: "أضف إلى السلة",
+    launch_offer: "عرض إطلاق KSH Makeup",
+launch_discount: "خصم 20٪ على منتجات مختارة",
+new_collection: "المجموعة الجديدة متوفرة الآن",
+limited_stock: "كميات محدودة",
+discover_now: "اكتشف المجموعة",
+stay_tuned: "تابعونا!",
+
   },
   es: {
     home: "Inicio",
@@ -223,6 +244,13 @@ const lang = {
     shop_title: "Tienda",
     shop_text: "Descubre nuestros productos increíbles",
     add_to_cart: "Añadir al carrito",
+    launch_offer: "Oferta de lanzamiento KSH Makeup",
+launch_discount: "-20% en productos seleccionados",
+new_collection: "Nueva colección disponible",
+limited_stock: "Cantidades limitadas",
+discover_now: "Descubre la colección",
+stay_tuned: "¡Mantente atento!",
+
   },
   ko: {
     home: "홈",
@@ -260,6 +288,13 @@ const lang = {
     shop_title: "쇼핑",
     shop_text: "멋진 제품을 확인해보세요",
     add_to_cart: "장바구니에 추가",
+    launch_offer: "KSH 메이크업 런칭 오퍼",
+launch_discount: "선택된 제품 20% 할인",
+new_collection: "신규 컬렉션 출시",
+limited_stock: "한정 수량",
+discover_now: "컬렉션 확인하기",
+stay_tuned: "계속 지켜봐 주세요!",
+
   },
 };
 
@@ -273,6 +308,13 @@ function updateTexts() {
 
   document.querySelectorAll(".product button").forEach((btn) => {
     btn.textContent = lang[currentLang].add_to_cart;
+  });
+  // Promo scroll
+  document.querySelectorAll(".promo-scroll [data-lang]").forEach((el) => {
+    const key = el.getAttribute("data-lang");
+    if (lang[currentLang][key]) {
+      el.textContent = lang[currentLang][key];
+    }
   });
 }
 
@@ -386,3 +428,9 @@ window.addEventListener("scroll", () => {
   document.querySelector("header")
     .classList.toggle("scrolled", window.scrollY > 50);
 });
+
+
+
+
+
+

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KSH Makeup - Kiss Slay Highlight</title>
+    <title>KSH Makeup - Shop</title>
 
     <link
       rel="stylesheet"
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="./CSS/navbar.css" />
     <link rel="stylesheet" href="./CSS/responsive.css" />
 
-    <link rel="icon" type="image/png" href="images/icon.png" />
+    <link rel="icon" type="image/png" href="./images/icon.png" />
   </head>
 
   <body>
@@ -86,6 +86,13 @@
           onclick="toggleAuth()"
         ></i>
         <i
+          id="favorites-icon"
+          class="fa-regular fa-heart"
+          onclick="toggleFavorites()"
+          title="Favorites"
+        ></i>
+
+        <i
           id="cart-icon"
           class="fa-solid fa-cart-shopping"
           onclick="handleCart(event)"
@@ -98,11 +105,31 @@
     <div id="cart">
       <ul id="cart-items"></ul>
       <p id="total-label">Total: $0.00</p>
-      <br />
       <button id="checkout-btn" onclick="checkout()" data-i18n="checkout">
         Checkout
       </button>
     </div>
+    <!-- FAVORITES -->
+<div id="favorites" class="hidden">
+  <ul id="favorites-items"></ul>
+</div>
+    <section class="promo-scroll">
+      <div class="promo-track">
+        <span data-lang="launch_offer">KSH Makeup Launch Offer</span>
+        <span data-lang="launch_discount">-20% on selected products</span>
+        <span data-lang="new_collection">New collection now available</span>
+        <span data-lang="limited_stock">Limited quantities</span>
+        <span data-lang="discover_now">Discover the collection</span>
+        <span data-lang="stay_tuned">Stay tuned!</span>
+
+        <span data-lang="launch_offer">KSH Makeup Launch Offer</span>
+        <span data-lang="launch_discount">-20% on selected products</span>
+        <span data-lang="new_collection">New collection now available</span>
+        <span data-lang="limited_stock">Limited quantities</span>
+        <span data-lang="discover_now">Discover the collection</span>
+        <span data-lang="stay_tuned">Stay tuned!</span>
+      </div>
+    </section>
     <!-- ================= TOP HERO ================= -->
     <section class="top-hero reveal">
       <h2 data-i18n="shop_title">Shop Now</h2>
@@ -112,9 +139,10 @@
     <section id="product1" class="section-p1">
       <div class="pro-container">
         <div class="pro">
-          <img
-            src="images/shop-mascara.webp"
-          />
+          <img src="./images/shop-mascara.webp" />
+          <i class="favorite-heart fa-regular fa-heart" onclick="toggleFavorite('Mascara', 34.99)"></i>
+
+
           <div class="des">
             <span>KSH</span>
             <h5>Mascara</h5>
@@ -127,14 +155,19 @@
             </div>
             <h4>$34.99</h4>
           </div>
-          <a href="#" class="cart" onclick="addToCart('Mascara',34.99)">
+          <a
+            href="#"
+            class="cart"
+            onclick="event.preventDefault();addToCart('Mascara',34.99)"
+          >
             <i class="fa-solid fa-bag-shopping"></i>
           </a>
         </div>
         <div class="pro">
-          <img
-            src="images/shop-blush.jpg"
-          />
+          <img src="./images/shop-blush.jpg" />
+          <i class="favorite-heart fa-regular fa-heart" onclick="toggleFavorite('Blush', 40.99)"></i>
+
+
           <div class="des">
             <span>KSH</span>
             <h5>Blush</h5>
@@ -147,14 +180,19 @@
             </div>
             <h4>$40.99</h4>
           </div>
-          <a href="#" class="cart" onclick="addToCart('Blush',40.99)">
+          <a
+            href="#"
+            class="cart"
+            onclick="event.preventDefault();addToCart('Blush',40.99)"
+          >
             <i class="fa-solid fa-bag-shopping"></i>
           </a>
         </div>
         <div class="pro">
-          <img
-            src="images/shop-contour.jpg"
-          />
+          <img src="./images/shop-contour.jpg" />
+          <i class="favorite-heart fa-regular fa-heart" onclick="toggleFavorite('Contour', 28.99)"></i>
+
+
           <div class="des">
             <span>KSH</span>
             <h5>Contour</h5>
@@ -167,17 +205,22 @@
             </div>
             <h4>$28.99</h4>
           </div>
-          <a href="#" class="cart" onclick="addToCart('Contour',28.99)">
+          <a
+            href="#"
+            class="cart"
+            onclick="event.preventDefault();addToCart('Contour',28.99)"
+          >
             <i class="fa-solid fa-bag-shopping"></i>
           </a>
         </div>
         <div class="pro">
-          <img
-            src="images/shop-highlighter.jpg"
-          />
+          <img src="./images/shop-highlighter.jpg" />
+          <i class="favorite-heart fa-regular fa-heart" onclick="toggleFavorite('Highlighter', 29.99)"></i>
+
+
           <div class="des">
             <span>KSH</span>
-            <h5>Highliter</h5>
+            <h5>Highlighter</h5>
             <div class="star">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
@@ -187,7 +230,11 @@
             </div>
             <h4>$29.99</h4>
           </div>
-          <a href="#" class="cart" onclick="addToCart('Highliter',29.99)">
+          <a
+            href="#"
+            class="cart"
+            onclick="event.preventDefault();addToCart('Highliter',29.99)"
+          >
             <i class="fa-solid fa-bag-shopping"></i>
           </a>
         </div>
@@ -196,9 +243,10 @@
     <section id="product1" class="section-p1">
       <div class="pro-container">
         <div class="pro">
-          <img
-            src="images/shop-lipliner.webp"
-          />
+          <img src="./images/shop-lipliner.webp" />
+         <i class="favorite-heart fa-regular fa-heart" onclick="toggleFavorite('Lipliner', 19.25)"></i>
+
+
           <div class="des">
             <span>KSH</span>
             <h5>Lipliner</h5>
@@ -211,14 +259,19 @@
             </div>
             <h4>$19.25</h4>
           </div>
-          <a href="#" class="cart" onclick="addToCart('Lipliner',19.25)">
+          <a
+            href="#"
+            class="cart"
+            onclick="event.preventDefault();addToCart('Lipliner',19.25)"
+          >
             <i class="fa-solid fa-bag-shopping"></i>
           </a>
         </div>
         <div class="pro">
-          <img
-            src="images/shop-gloss.webp"
-          />
+          <img src="./images/shop-gloss.webp" />
+         <i class="favorite-heart fa-regular fa-heart" onclick="toggleFavorite('Gloss', 24.99)"></i>
+
+
           <div class="des">
             <span>KSH</span>
             <h5>Gloss</h5>
@@ -231,14 +284,19 @@
             </div>
             <h4>$24.99</h4>
           </div>
-          <a href="#" class="cart" onclick="addToCart('Gloss',24.99)">
+          <a
+            href="#"
+            class="cart"
+            onclick="event.preventDefault();addToCart('Gloss',24.99)"
+          >
             <i class="fa-solid fa-bag-shopping"></i>
           </a>
         </div>
         <div class="pro">
-          <img
-            src="images/shop-concealer.jpg"
-          />
+          <img src="./images/shop-concealer.jpg" />
+         <i class="favorite-heart fa-regular fa-heart" onclick="toggleFavorite('Concealer', 35.95)"></i>
+
+
           <div class="des">
             <span>KSH</span>
             <h5>Concealer</h5>
@@ -251,14 +309,19 @@
             </div>
             <h4>$35.95</h4>
           </div>
-          <a href="#" class="cart" onclick="addToCart('Concealer',35.95)">
+          <a
+            href="#"
+            class="cart"
+            onclick="event.preventDefault();addToCart('Concealer',35.95)"
+          >
             <i class="fa-solid fa-bag-shopping"></i>
           </a>
         </div>
         <div class="pro">
-          <img
-            src="images/shop-lipstick.webp"
-          />
+          <img src="./images/shop-lipstick.webp" />
+         <i class="favorite-heart fa-regular fa-heart" onclick="toggleFavorite('Lipstick', 22.50)"></i>
+
+
           <div class="des">
             <span>KSH</span>
             <h5>Lipstick</h5>
@@ -271,7 +334,11 @@
             </div>
             <h4>$22.50</h4>
           </div>
-          <a href="#" class="cart" onclick="addToCart('Lipstick',22.50)">
+          <a
+            href="#"
+            class="cart"
+            onclick="event.preventDefault();addToCart('Lipstick',22.50)"
+          >
             <i class="fa-solid fa-bag-shopping"></i>
           </a>
         </div>
@@ -308,5 +375,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="script2.js"></script>
+
   </body>
 </html>
