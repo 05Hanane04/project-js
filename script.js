@@ -84,6 +84,24 @@ function removeFromCart(index, event) {
     document.getElementById("cart").classList.add("hidden");
   }
 }
+function decreaseQty(index, event) {
+  if (event) event.stopPropagation();
+
+  if (cart[index].qty > 1) {
+    cart[index].qty--;
+    total -= cart[index].price;
+  } else {
+    // si qty = 1 → on supprime le produit
+    total -= cart[index].price;
+    cart.splice(index, 1);
+  }
+
+  updateCart();
+
+  if (cart.length === 0) {
+    document.getElementById("cart").classList.add("hidden");
+  }
+}
 
 function updateCart() {
   const list = document.getElementById("cart-items");
@@ -93,13 +111,24 @@ function updateCart() {
 
   cart.forEach((item, i) => {
     const li = document.createElement("li");
-    li.innerHTML = `
-            ${item.name} (x${item.qty}) - $${(item.price * item.qty).toFixed(2)}
-            <button class="remove-btn" onclick="removeFromCart(${i}, event)">
-  ${lang[currentLang].remove}
-</button>
 
-        `;
+//     li.innerHTML = `
+//             ${item.name} (x${item.qty}) - $${(item.price * item.qty).toFixed(2)}
+//             <button class="remove-btn" onclick="removeFromCart(${i}, event)">
+//   ${lang[currentLang].remove}
+// </button> `;
+li.innerHTML = `
+  <span class="item-text">
+    ${item.name} (x${item.qty}) - $${(item.price * item.qty).toFixed(2)}
+  </span>
+
+  <div class="item-actions">
+    <button class="qty-btn" onclick="decreaseQty(${i}, event)">−</button>
+    <button class="remove-btn" onclick="removeFromCart(${i}, event)">x</button>
+  </div>
+`;
+
+
     list.appendChild(li);
   });
 
@@ -175,7 +204,7 @@ launch_discount: "-20% on selected products",
 new_collection: "New collection now available",
 limited_stock: "Limited quantities",
 discover_now: "Discover the collection",
-stay_tuned: "Stay tuned!",
+stay_tuned: "Stay tuned !",
 
   },
   fr: {
@@ -486,6 +515,73 @@ window.addEventListener("scroll", () => {
   document.querySelector("header")
     .classList.toggle("scrolled", window.scrollY > 50);
 });
+
+
+
+
+window.onload = function() {
+  const ctx = document.getElementById('shopChart').getContext('2d');
+
+  const data = {
+    labels: ['January', 'February', 'March', 'April', 'May'],
+    datasets: [
+      {
+        label: 'Product A',
+        data: [30, 50, 40, 60, 70],
+        borderColor: '#955251',
+        backgroundColor: '#e1b6b5ff',
+        tension: 0.4,
+        fill: true
+      },
+      {
+        label: 'Product B',
+        data: [20, 40, 35, 55, 65],
+        borderColor: '#dcae96',
+        backgroundColor: '#b07e68ff',
+        tension: 0.4,
+        fill: true
+      }
+    ]
+  };
+
+  const config = {
+    type: 'line',
+    data: data,
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'top' },
+        title: { display: true, text: 'Dynamic Shop Sales Chart' }
+      },
+      scales: {
+        y: { beginAtZero: true }
+      }
+    }
+  };
+
+  const shopChart = new Chart(ctx, config);
+
+  setInterval(() => {
+    const nextMonth = `Month ${data.labels.length + 1}`;
+    const nextA = Math.floor(Math.random() * 100);
+    const nextB = Math.floor(Math.random() * 100);
+
+    data.labels.push(nextMonth);
+    data.datasets[0].data.push(nextA);
+    data.datasets[1].data.push(nextB);
+
+    if (data.labels.length > 10) {
+      data.labels.shift();
+      data.datasets[0].data.shift();
+      data.datasets[1].data.shift();
+    }
+
+    shopChart.update();
+  }, 3000);
+};
+
+
+
 
 
 

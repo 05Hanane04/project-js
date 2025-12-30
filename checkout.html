@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Checkout - KSH Makeup</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - KSH Makeup</title>
 
-  <link rel="stylesheet" href="./CSS/style.css" />
-<link rel="stylesheet" href="./CSS/checkout.css" />
-  <link rel="stylesheet" href="./CSS/navbar.css" />
-  <link rel="stylesheet" href="./CSS/footer.css" />
-  <link rel="stylesheet" href="./CSS/responsive.css" />
-  <link rel="icon" type="image/png" href="./images/icon.png" />
-</head>
-<body>
- <!-- ================= AUTH MODAL ================= -->
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/checkout.css" />
+    <link rel="stylesheet" href="./CSS/navbar.css" />
+    <link rel="stylesheet" href="./CSS/footer.css" />
+    <link rel="stylesheet" href="./CSS/responsive.css" />
+    <link rel="icon" type="image/png" href="./images/icon.png" />
+  </head>
+  <body>
+    <!-- ================= AUTH MODAL ================= -->
     <div id="auth-modal">
       <div class="auth-box">
         <span class="close-btn" onclick="toggleAuth()">x</span>
@@ -101,26 +101,34 @@
       </button>
     </div>
     <!-- FAVORITES -->
-<div id="favorites" class="hidden">
-  <ul id="favorites-items"></ul>
-</div>
-  <!-- Checkout Form -->
-  <main class="checkout-container" style="max-width:600px; margin:50px auto;">
-    <h2>Checkout</h2>
+    <div id="favorites" class="hidden">
+      <ul id="favorites-items"></ul>
+    </div>
+    <!-- Checkout Form -->
+    <main
+      class="checkout-container"
+      style="max-width: 600px; margin: 50px auto"
+    >
+      <h2>Checkout</h2>
 
-    <form id="checkout-form" class="form">
-      <input type="text" id="name" placeholder="Full Name" required />
-      <input type="email" id="email" placeholder="Email" required />
-      <input type="text" id="address" placeholder="Address" required />
-      <input type="text" id="card" placeholder="Card Number" required />
-      <input type="text" id="expiry" placeholder="Expiry Date MM/YY" required />
-      <input type="text" id="cvv" placeholder="CVV" required />
-      <button type="submit" class="normal">Pay Now</button>
-    </form>
+      <form id="checkout-form" class="form">
+        <input type="text" id="name" placeholder="Full Name" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="text" id="address" placeholder="Address" required />
+        <input type="text" id="card" placeholder="Card Number" required />
+        <input
+          type="text"
+          id="expiry"
+          placeholder="Expiry Date MM/YY"
+          required
+        />
+        <input type="text" id="cvv" placeholder="CVV" required />
+        <button type="submit" class="normal">Pay Now</button>
+      </form>
 
-    <button id="cancel-btn" class="normal">Cancel</button>
-  </main>
- <!-- ================= FOOTER ================= -->
+      <button id="cancel-btn" class="normal">Cancel</button>
+    </main>
+    <!-- ================= FOOTER ================= -->
     <footer>
       <div class="footer-container">
         <div class="footer-box">
@@ -149,21 +157,25 @@
 
       <div class="footer-bottom">© 2025 KSH Makeup — All Rights Reserved</div>
     </footer>
-<script src="script.js"></script>
-<script src="script2.js"></script>
-  <!-- JS for checkout -->
-  <script>
-    document.getElementById('checkout-form').addEventListener('submit', function(e){
-      e.preventDefault();
-      alert("Your delivery 🚚 is on the way !");
-      // Optionally clear the cart
-      localStorage.removeItem('cart');
-      window.location.href = "shop.html";
-    });
+    <script src="script.js"></script>
+    <script src="script2.js"></script>
+    <!-- JS for checkout -->
+    <script>
+      document
+        .getElementById("checkout-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Your delivery 🚚 is on the way !");
+          // Optionally clear the cart
+          localStorage.removeItem("cart");
+          window.location.href = "shop.html";
+        });
 
-    document.getElementById('cancel-btn').addEventListener('click', function(){
-      window.location.href = "shop.html";
-    });
-  </script>
-</body>
+      document
+        .getElementById("cancel-btn")
+        .addEventListener("click", function () {
+          window.location.href = "shop.html";
+        });
+    </script>
+  </body>
 </html>
