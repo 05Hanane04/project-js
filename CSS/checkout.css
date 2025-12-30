@@ -1,0 +1,75 @@
+/* ================= CHECKOUT PAGE STYLES ================= */
+
+/* Main container */
+.checkout-container {
+  background-color: #dcae96;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.checkout-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-family: 'Playfair Display', serif;
+  color: #955251;
+}
+
+/* Form styling */
+.checkout-container .form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Inputs */
+.checkout-container input[type="text"],
+.checkout-container input[type="email"] {
+  padding: 12px 15px;
+  border: 1px solid #955251;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+.checkout-container input:focus {
+  border-color: #dcae96;
+  outline: none;
+}
+
+/* Buttons */
+.checkout-container .normal {
+  padding: 12px;
+  background-color:#955251;
+  color: #dcae96;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.checkout-container .normal:hover {
+  background-color: #955251;
+}
+
+/* Cancel button */
+#cancel-btn {
+  margin-top: 20px;
+  background-color:#955251;
+  color: #dcae96;
+}
+
+#cancel-btn:hover {
+  background-color: #dcae96;
+  color: #955251;
+  border: 1px solid #955251;
+}
+/* Responsive */
+@media (max-width: 600px) {
+  .checkout-container {
+    margin: 20px;
+    padding: 20px;
+  }
+}

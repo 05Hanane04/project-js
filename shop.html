@@ -105,7 +105,7 @@
     <div id="cart">
       <ul id="cart-items"></ul>
       <p id="total-label">Total: $0.00</p>
-      <button id="checkout-btn" onclick="checkout()" data-i18n="checkout">
+      <button id="checkout-btn" onclick="window.location.href='checkout.html'" onclick="checkout()" data-i18n="checkout">
         Checkout
       </button>
     </div>
@@ -135,6 +135,22 @@
       <h2 data-i18n="shop_title">Shop Now</h2>
       <p data-i18n="shop_text">Check out our amazing products</p>
     </section>
+
+    <!-- ================= SEARCH BAR ================= -->
+<div class="search-container">
+  <div class="search-box">
+    <i class="fa fa-search"></i>
+    <input
+      type="text"
+      id="search-input"
+      placeholder="Search products..."
+      oninput="searchProduct()"
+      onfocus="showHistory()"
+    />
+  </div>
+
+  <ul id="search-history" class="search-history"></ul>
+</div>
     <!-- ================= PRODUCTS ================= -->
     <section id="product1" class="section-p1">
       <div class="pro-container">
@@ -344,6 +360,12 @@
         </div>
       </div>
     </section>
+    <!-- ================= PRODUCT CLICKS GRAPH ================= -->
+<section id="product-graph" style="max-width:600px; margin:50px auto;">
+  <h2 style="text-align:center;">Product  Statistics</h2>
+  <canvas id="productChart"></canvas>
+</section>
+
     <!-- ================= FOOTER ================= -->
     <footer>
       <div class="footer-container">
@@ -373,9 +395,13 @@
 
       <div class="footer-bottom">© 2025 KSH Makeup — All Rights Reserved</div>
     </footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script src="script.js"></script>
     <script src="script2.js"></script>
+      <script src="script3.js"></script>
+
+
 
   </body>
 </html>

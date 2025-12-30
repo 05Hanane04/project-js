@@ -13,7 +13,65 @@ function addToCart(item, price) {
   total += price;
   updateCart();
   document.getElementById("cart").classList.remove("hidden");
+  updateProductGraph(item);
+
 }
+/* ===== PRODUCT GRAPH DATA ===== */
+const productClicks = {
+  Mascara: 0,
+  Blush: 0,
+  Contour: 0,
+  Highlighter: 0,
+  Lipliner: 0,
+  Gloss: 0,
+  Concealer: 0,
+  Lipstick: 0,
+};
+function updateProductGraph(productName) {
+  if (!productClicks.hasOwnProperty(productName)) return;
+
+  productClicks[productName]++;
+
+  productChart.data.datasets[0].data = Object.values(productClicks);
+  productChart.update();
+}
+
+const ctx = document.getElementById("productChart");
+let productChart = null;
+function updateProductGraph(productName) {
+  if (!productClicks.hasOwnProperty(productName)) return;
+
+  productClicks[productName]++;
+
+  productChart.data.datasets[0].data = Object.values(productClicks);
+  productChart.update();
+}
+
+if (ctx) {
+  productChart = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: Object.keys(productClicks),
+      datasets: [
+        {
+          label: "Number of clicks",
+          data: Object.values(productClicks),
+          backgroundColor: "#955251",
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: { stepSize: 1 },
+        },
+      },
+    },
+  });
+}
+let reviews = [];
 
 function removeFromCart(index, event) {
   if (event) event.stopPropagation();
@@ -428,6 +486,7 @@ window.addEventListener("scroll", () => {
   document.querySelector("header")
     .classList.toggle("scrolled", window.scrollY > 50);
 });
+
 
 
 

@@ -68,6 +68,65 @@ body {
   color: #955251;
   cursor: pointer;
 }
+/* ===== SEARCH BAR ===== */
+.search-container {
+  max-width: 400px;
+  margin:auto;
+  position: relative;
+
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  background:#955251;;
+  border: 1px solid #955251;
+  padding: 10px 15px;
+  border-radius: 25px;
+}
+
+.search-box input {
+  color: #ffff;
+  border: none;
+  outline: none;
+  width: 100%;
+  margin-left: 10px;
+  font-size: 14px;
+   background-color: #955251;
+}
+.search-box input::placeholder {
+  color: #dcae96;
+}
+
+.search-history {
+  list-style: none;
+  background: #955251;
+  border-radius: 10px;
+  margin-top: 5px;
+  padding: 5px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: none;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+.search-history li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 15px;
+  cursor: pointer;
+   background-color: #955251;
+   border-radius: 20px;
+}
+
+.search-history li:hover {
+  background:#955251; 
+}
+
+.search-history span {
+  color: #dcae96;
+  cursor: pointer;
+}
 /* PRODUCTS */
 button {
   background-color: #955251;
