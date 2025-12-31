@@ -111,12 +111,6 @@ function updateCart() {
 
   cart.forEach((item, i) => {
     const li = document.createElement("li");
-
-//     li.innerHTML = `
-//             ${item.name} (x${item.qty}) - $${(item.price * item.qty).toFixed(2)}
-//             <button class="remove-btn" onclick="removeFromCart(${i}, event)">
-//   ${lang[currentLang].remove}
-// </button> `;
 li.innerHTML = `
   <span class="item-text">
     ${item.name} (x${item.qty}) - $${(item.price * item.qty).toFixed(2)}
@@ -138,6 +132,9 @@ li.innerHTML = `
 
   document.getElementById("checkout-btn").textContent =
     lang[currentLang].checkout;
+
+  updateAdminPanel();
+
 }
 function handleCart(event) {
   event.stopPropagation();
@@ -471,6 +468,8 @@ function handleLogin() {
     localStorage.setItem("loggedUser", JSON.stringify(newUser));
     updateNavbarUser();
     toggleAuth();
+    updateAdminVisibility();
+
   }
 
   // clear inputs
@@ -499,13 +498,24 @@ function updateNavbarUser() {
     if (logoutBtn) logoutBtn.remove();
     icon.className = "fa-regular fa-user";
   }
+
+  updateAdminPanel();
+
 }
 function logoutUser() {
   localStorage.removeItem("loggedUser");
   updateNavbarUser();
+  updateAdminPanel();
+  updateAdminVisibility();
+
+
 }
 document.addEventListener("DOMContentLoaded", () => {
   updateNavbarUser();
+  updateAdminPanel();
+  updateAdminVisibility();
+
+
 });
 
 function toggleMenu() {
@@ -579,6 +589,90 @@ window.onload = function() {
     shopChart.update();
   }, 3000);
 };
+
+
+
+function updateAdminPanel() {
+  const adminPanel = document.getElementById("admin-panel");
+  const stockBody = document.getElementById("stock-body");
+  const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+
+  if (!adminPanel || !stockBody) return;
+
+  // Si pas connecté ou pas admin → cacher
+  if (!loggedUser || loggedUser.email !== "admin@gmail.com") {
+    adminPanel.classList.add("hidden");
+    return;
+  }
+
+  // Admin connecté → afficher
+  adminPanel.classList.remove("hidden");
+
+  // Remplir le tableau avec le panier
+  stockBody.innerHTML = "";
+
+  cart.forEach((item, index) => {
+    const row = document.createElement("tr");
+    // row.innerHTML = `
+    //   <td>${item.name}</td>
+    //   <td>${item.price.toFixed(2)}</td>
+    //   <td>${item.qty}</td>
+    //   <td>
+    //     <button onclick="removeFromCart(${index}, event)">Remove</button>
+    //   </td>
+    // `;
+    row.innerHTML = `
+  <td>${item.name}</td>
+  <td>${item.price.toFixed(2)}</td>
+  <td>${item.qty}</td>
+  <td>
+    <button onclick="updateProduct(${index})">Update</button>
+    <button onclick="removeFromCart(${index}, event)">Remove</button>
+  </td>
+`;
+    stockBody.appendChild(row);
+  });
+}
+
+function updateProduct(index) {
+  const item = cart[index];
+
+  const newName = prompt("Product name:", item.name);
+  if (newName === null) return;
+
+  const newPrice = prompt("Price:", item.price);
+  if (newPrice === null || isNaN(newPrice) || newPrice <= 0) return;
+
+  const newQty = prompt("Quantity:", item.qty);
+  if (newQty === null || isNaN(newQty) || newQty < 1) return;
+
+  // Mise à jour
+  total -= item.price * item.qty;
+
+  item.name = newName;
+  item.price = parseFloat(newPrice);
+  item.qty = parseInt(newQty);
+
+  total += item.price * item.qty;
+
+  updateCart();
+  updateAdminPanel();
+}
+
+
+function updateAdminVisibility() {
+  const adminPanel = document.getElementById("admin-panel");
+  const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+
+  if (!adminPanel) return;
+
+  if (loggedUser && loggedUser.email === "admin@gmail.com") {
+    adminPanel.classList.remove("hidden");
+  } else {
+    adminPanel.classList.add("hidden");
+  }
+}
+
 
 
 
