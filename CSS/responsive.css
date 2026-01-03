@@ -71,14 +71,30 @@
     font-size: 28px;
     margin-bottom: 40px;
   }
+  .search-container{
+    width: 80%;
+  }
+  #admin-panel {
+    margin: 30px 16px;
+    padding: 20px;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 10px 12px;
+    font-size: 14px;
+    
+  }
+
+  .admin-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
 }
 @media (max-width: 1024px) {
   #newsletter .form {
     width: 100%;
-  }
-
-  .top-hero h2 {
-    font-size: 34px;
   }
 }
 /*Contact Page*/
@@ -122,4 +138,50 @@
     #newsletter .form {
     width: 100%;
   }
+  .admin-table,
+  .admin-table thead,
+  .admin-table tbody,
+  .admin-table th,
+  .admin-table td,
+  .admin-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .admin-table thead {
+    display: none;
+  }
+
+  .admin-table tr {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 14px;
+    background: #f9f9f9;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  }
+
+  .admin-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    text-align: right;
+  }
+
+  .admin-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #955251;
+    text-align: left;
+  }
+
+  .admin-product {
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .admin-actions {
+    justify-content: flex-end;
+  }
+  
 }
