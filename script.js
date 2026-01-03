@@ -14,8 +14,20 @@ function addToCart(item, price) {
   updateCart();
   document.getElementById("cart").classList.remove("hidden");
   updateProductGraph(item);
-
 }
+let stockData = {
+  Mascara: 0,
+  Blush: 0,
+  Contour: 0,
+  Highlighter: 0,
+  Lipliner: 0,
+  Gloss: 0,
+  Concealer: 0,
+  Lipstick: 0,
+};
+
+let stockDonutChart = null;
+
 /* ===== PRODUCT GRAPH DATA ===== */
 const productClicks = {
   Mascara: 0,
@@ -59,7 +71,9 @@ if (ctx) {
           backgroundColor: "#955251",
         },
       ],
+
     },
+    
     options: {
       responsive: true,
       scales: {
@@ -589,49 +603,48 @@ window.onload = function() {
     shopChart.update();
   }, 3000);
 };
-
-
-
 function updateAdminPanel() {
   const adminPanel = document.getElementById("admin-panel");
   const stockBody = document.getElementById("stock-body");
+  const donutBox = document.getElementById("admin-donut");
   const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
 
   if (!adminPanel || !stockBody) return;
 
-  // Si pas connecté ou pas admin → cacher
+  // ❌ Not admin → hide everything
   if (!loggedUser || loggedUser.email !== "admin@gmail.com") {
     adminPanel.classList.add("hidden");
+    if (donutBox) donutBox.classList.add("hidden");
     return;
   }
 
-  // Admin connecté → afficher
+  // ✅ Admin logged in → show panel
   adminPanel.classList.remove("hidden");
+  if (donutBox) donutBox.classList.remove("hidden");
 
-  // Remplir le tableau avec le panier
+  // 🔄 Render admin stock table (THIS WAS MISSING)
   stockBody.innerHTML = "";
 
   cart.forEach((item, index) => {
     const row = document.createElement("tr");
-    // row.innerHTML = `
-    //   <td>${item.name}</td>
-    //   <td>${item.price.toFixed(2)}</td>
-    //   <td>${item.qty}</td>
-    //   <td>
-    //     <button onclick="removeFromCart(${index}, event)">Remove</button>
-    //   </td>
-    // `;
     row.innerHTML = `
-  <td>${item.name}</td>
-  <td>${item.price.toFixed(2)}</td>
-  <td>${item.qty}</td>
-  <td>
-    <button onclick="updateProduct(${index})">Update</button>
-    <button onclick="removeFromCart(${index}, event)">Remove</button>
-  </td>
-`;
+      <td>${item.name}</td>
+      <td>${item.price.toFixed(2)}</td>
+      <td>${item.qty}</td>
+      <td>
+        <button onclick="updateProduct(${index})">Update</button>
+        <button onclick="removeFromCart(${index}, event)">Remove</button>
+      </td>
+    `;
     stockBody.appendChild(row);
   });
+
+  // 🍩 DONUT LOGIC (SAFE ADDITION)
+  if (donutBox && !stockDonutChart) {
+    createStockDonut(); // create once
+  }
+
+  updateStockDonut(); // update always
 }
 
 function updateProduct(index) {
@@ -673,6 +686,76 @@ function updateAdminVisibility() {
   }
 }
 
+function createStockDonut() {
+  const ctx = document.getElementById("stockdonutchart");
+
+  if (!ctx) return;
+
+  stockDonutChart = new Chart(ctx, {
+    type: "doughnut",
+    data: {
+      labels: Object.keys(stockData),
+      datasets: [
+        {
+          data: Object.values(stockData),
+          backgroundColor: [
+            "#955251",
+            "#dcae96",
+            "#b07e68",
+            "#e1b6b5",
+            "#c97c5d",
+            "#f2c1ac",
+            "#a45c40",
+            "#7b3f2f",
+          ],
+        },
+      ],
+    },
+    options: {
+      plugins: {
+        legend: { position: "bottom" },
+        tooltip: {
+          callbacks: {
+            label: function (ctx) {
+              const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
+              const value = ctx.raw;
+              const percent = total
+                ? ((value / total) * 100).toFixed(1)
+                : 0;
+              return `${ctx.label}: ${percent}%`;
+            },
+          },
+        },
+      },
+    },
+  });
+}
+createStockDonut();
+
+function updateStockDonut() {
+  if (!stockDonutChart) return;
+
+  // reset
+  Object.keys(stockData).forEach((k) => (stockData[k] = 0));
+
+  // fill from cart
+  cart.forEach((item) => {
+    if (stockData.hasOwnProperty(item.name)) {
+      stockData[item.name] += item.qty;
+    }
+  });
+
+  stockDonutChart.data.datasets[0].data = Object.values(stockData);
+  stockDonutChart.update();
+}
+function resetChart() {
+  for (let key in productClicks) productClicks[key] = 0;
+  localStorage.setItem("productClicks", JSON.stringify(productClicks));
+  updateCart();
+}
+// renderStockTable();
+createStockDonut();
+
 /* Script Back to the top*/ 
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 
@@ -690,6 +773,9 @@ scrollTopBtn.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+
+
+
 
 
 

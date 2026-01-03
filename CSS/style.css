@@ -790,7 +790,193 @@ button:hover {
   text-decoration: underline;
 
 } 
+/* ================= REVIEWS ================= */
+#reviews-section {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+}
 
+.reviews-container {
+  width: 70%;
+  max-width: 700px;
+}
+
+.reviews-title {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid #e2e9e1;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  margin-bottom: 24px;
+}
+
+.review-form input,
+.review-form textarea {
+  font-family: monospace;
+  width: 100%;
+  padding: 12px 15px;
+  outline: none;
+  border: 1px solid #e2e9e1;
+  border-radius: 10px;
+}
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.rating-label {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.stars-input {
+  display: inline-flex;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.stars-input i {
+  font-size: 20px;
+  opacity: 0.3;
+  transition: 0.2s ease;
+}
+
+.stars-input i.active {
+  opacity: 1;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reviews-empty {
+  text-align: center;
+  opacity: 0.8;
+}
+
+.review-card {
+  border: 1px solid #e2e9e1;
+  border-radius: 16px;
+  padding: 16px 16px 14px;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.review-user {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.review-name {
+  font-weight: 600;
+}
+
+.review-date {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.review-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  border: 1px solid #e2e9e1;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.icon-btn:hover {
+  transform: translateY(-1px);
+}
+
+.icon-btn i {
+  font-size: 14px;
+}
+
+.delete-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: #b6646c;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #955251;
+}
+
+.review-rating {
+  margin: 10px 0 8px;
+  display: flex;
+  gap: 6px;
+}
+
+.review-rating i {
+  font-size: 16px;
+  opacity: 0.25;
+}
+
+.review-rating i.filled {
+  opacity: 1;
+}
+
+.review-text {
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .reviews-container {
+    width: 100%;
+  }
+
+  .review-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .review-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
 
 
 #scrollTopBtn {
@@ -810,6 +996,7 @@ button:hover {
   visibility: hidden;
   transition: opacity 0.4s ease, transform 0.4s ease;
   transform: translateY(20px);
+
 }
 #scrollTopBtn i {
   font-size: 25px;
@@ -824,5 +1011,23 @@ button:hover {
 
 #scrollTopBtn:hover {
   background-color: #7d3f3e;
+}
+
+.chart-box canvas {
+  width: 280px !important;   
+  height: 280px !important; 
+  margin: auto;
+  display: block;
+}
+.chart-box {
+  margin-top: 30px;
+  padding: 18px;
+  border: 1px solid #955251;
+  border-radius: 18px;
+  background: #fff;
+  text-align: center;
+  max-width: 360px;    
+  margin-left: auto;
+  margin-right: auto;
 }
 
